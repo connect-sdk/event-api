@@ -1,0 +1,43 @@
+---
+version: v1
+
+managed:
+  enabled: true
+  go_package_prefix:
+    default: github.com/connect-sdk/event-api/proto
+    except:
+      - buf.build/googleapis/googleapis
+      - buf.build/envoyproxy/protoc-gen-validate
+      - buf.build/protoc-extensions/protoc-gen-go-defaults
+
+plugins:
+  - plugin: buf.build/protocolbuffers/go
+    out: proto
+    opt:
+      - paths=source_relative
+
+  - plugin: go-json
+    out: proto
+    opt:
+      - paths=source_relative
+      - allow_unknown=true
+
+  - name: go-defaults
+    out: proto
+    opt:
+      - paths=source_relative
+
+  - name: go-resource
+    out: proto
+    opt:
+      - paths=source_relative
+
+  - plugin: buf.build/connectrpc/go
+    out: proto
+    opt:
+      - paths=source_relative
+
+  - plugin: buf.build/bufbuild/validate-go
+    out: proto
+    opt:
+      - paths=source_relative
