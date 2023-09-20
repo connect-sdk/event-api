@@ -1,0 +1,135 @@
+syntax = "proto3";
+
+package connect.event.v1;
+
+import "google/api/field_behavior.proto";
+import "google/protobuf/any.proto";
+import "google/protobuf/timestamp.proto";
+import "validate/validate.proto";
+
+// The service that an application uses to consume events from the Push method.
+service EventService {
+  // PushEvent pushes a given event to cloud.event.v1.EventService service.
+  rpc PushEvent(PushEventRequest) returns (PushEventResponse);
+}
+
+// PushEventRequest represents a request for cloud.event.v1.EventService.PushEvent method.
+message PushEventRequest {
+  // The event.
+  Event event = 1 [
+    // field behavior
+    (google.api.field_behavior) = REQUIRED,
+    // field validateion
+    (validate.rules).message.required = true
+  ];
+}
+
+// PushEventResponse represents a response for cloud.event.v1.EventService.PushEvent method.
+message PushEventResponse {}
+
+// Event represents an event.
+message Event {
+  // Required. Id contains the event's identifier. Producers MUST ensure that
+  // source + id is unique for each distinct event. If a duplicate event is
+  // re-sent (e.g. due to a network error) it MAY have the same id. Consumers
+  // MAY assume that Events with identical source and id are duplicates.
+  // Example: 5cc0996e-facd-11ed-9c22-325096b39f47
+  string id = 1 [
+    // field behavior
+    (google.api.field_behavior) = REQUIRED
+  ];
+
+  // Required. Source contains the context in which an event happened. Often
+  // this will include information such as the type of the event source, the
+  // organization publishing the event or the process that produced the event.
+  // The exact syntax and semantics behind the data encoded in the URI is
+  // defined by the event producer. Producers MUST ensure that source + id is
+  // unique for each distinct event.
+  //
+  // Example: https://github.com/cloudevents, urn:uuid:6e8bc430-9c3a-11d9-9669-0800200c9a66, /cloudevents/spec/pull/123
+  string source = 2 [
+    // field behavior
+    (google.api.field_behavior) = REQUIRED,
+    // field validation
+    (validate.rules).string.uri_ref = true
+  ];
+
+  // Required. SpecVerion is the version of the CloudEvents specification which
+  // the event uses. This enables the interpretation of the context. Compliant
+  // event producers MUST use a value of 1.0 when referring to this version of
+  // the specification. Currently, this attribute will only have the 'major' and
+  // 'minor' version numbers included in it. This allows for 'patch' changes to
+  // the specification to be made without changing this property's value in the
+  // serialization. Note: for 'release candidate' releases a suffix might be
+  // used for testing purposes.
+  string spec_version = 3 [
+    // field behavior
+    (google.api.field_behavior) = REQUIRED
+  ];
+
+  // Required. Type attribute contains a value describing the type of event
+  // related to the originating occurrence. Often this attribute is used for
+  // routing, observability, policy enforcement, etc.
+  //
+  // Example: com.github.pull_request.opened, com.example.object.deleted
+  string type = 4 [
+    // field behavior
+    (google.api.field_behavior) = REQUIRED
+  ];
+
+  // Optional. Extra attributes.
+  map<string, EventAttributeValue> attributes = 5 [
+    // field behavior
+    (google.api.field_behavior) = OPTIONAL
+  ];
+
+  // Optional. Contains the event's data.
+  oneof data {
+    // either must be set.
+    option (validate.required) = true;
+
+    // BinaryData contains the data in binary format.
+    bytes binary_data = 6;
+
+    // TextData contains the data in string format.
+    string text_data = 7;
+
+    // ProtoData contains the data in proto format.
+    google.protobuf.Any proto_data = 8;
+  }
+}
+
+// EventAttributeValue represents an event attributes.
+message EventAttributeValue {
+  oneof attr {
+    // either must be set.
+    option (validate.required) = true;
+
+    // CeBoolean is a boolean value.
+    bool ce_boolean = 1;
+    // CeInteager is an integer value.
+    int32 ce_integer = 2;
+    // CeString is a string value.
+    string ce_string = 3;
+    // CeBytes is a bytes value.
+    bytes ce_bytes = 4;
+    // CeUri is a uri value.
+    string ce_uri = 5 [
+      // field validation
+      (validate.rules).string.uri = true
+    ];
+    // CeUriRef is a uri ref value.
+    string ce_uri_ref = 6 [
+      // field validation
+      (validate.rules).string.uri_ref = true
+    ];
+    // CeTimestamp ia a timestamp value.
+    google.protobuf.Timestamp ce_timestamp = 7;
+  }
+}
+
+// EventBatch is a batch format.
+message EventBatch {
+  // Events collection.
+  repeated Event events = 1;
+}
