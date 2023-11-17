@@ -4,7 +4,7 @@ go 1.21.1
 
 require (
 	cloud.google.com/go/pubsub v1.33.0
-	connectrpc.com/connect v1.11.1
+	connectrpc.com/connect v1.12.0
 	github.com/connect-sdk/interceptor v0.0.0-20231009131801-d33f81e0eb5b
 	github.com/connect-sdk/middleware v0.0.0-20231009131600-a8e12be82453
 	github.com/connect-sdk/pubsub-api v0.0.0-20231009090131-8dfeb533020f
