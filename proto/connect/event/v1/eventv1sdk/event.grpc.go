@@ -25,6 +25,7 @@ type EventServiceClient struct {
 // NewEventServiceClient creates a new cloud.event.v1.EventServiceClient client.
 func NewEventServiceClient(uri string, options ...connect.ClientOption) eventv1.EventServiceClient {
 	// prepare the options
+	options = append(options, interceptor.WithContext())
 	options = append(options, interceptor.WithTracer())
 	options = append(options, interceptor.WithLogger())
 	// prepare the clinet
@@ -57,6 +58,7 @@ type EventServiceHandler struct {
 func (x *EventServiceHandler) Mount(r chi.Router) {
 	var options []connect.HandlerOption
 	// prepare the options
+	options = append(options, interceptor.WithContext())
 	options = append(options, interceptor.WithTracer())
 	options = append(options, interceptor.WithLogger())
 	options = append(options, interceptor.WithRecovery())
