@@ -18,7 +18,7 @@ import (
 // generated with a version of connect newer than the one compiled into your binary. You can fix the
 // problem by either regenerating this code with an older version of connect or updating the connect
 // version compiled into your binary.
-const _ = connect.IsAtLeastVersion0_1_0
+const _ = connect.IsAtLeastVersion1_13_0
 
 const (
 	// EventServiceName is the fully-qualified name of the EventService service.
@@ -35,6 +35,12 @@ const (
 const (
 	// EventServicePushEventProcedure is the fully-qualified name of the EventService's PushEvent RPC.
 	EventServicePushEventProcedure = "/connect.event.v1.EventService/PushEvent"
+)
+
+// These variables are the protoreflect.Descriptor objects for the RPCs defined in this package.
+var (
+	eventServiceServiceDescriptor         = v1.File_connect_event_v1_event_proto.Services().ByName("EventService")
+	eventServicePushEventMethodDescriptor = eventServiceServiceDescriptor.Methods().ByName("PushEvent")
 )
 
 // EventServiceClient is a client for the connect.event.v1.EventService service.
@@ -56,7 +62,8 @@ func NewEventServiceClient(httpClient connect.HTTPClient, baseURL string, opts .
 		pushEvent: connect.NewClient[v1.PushEventRequest, v1.PushEventResponse](
 			httpClient,
 			baseURL+EventServicePushEventProcedure,
-			opts...,
+			connect.WithSchema(eventServicePushEventMethodDescriptor),
+			connect.WithClientOptions(opts...),
 		),
 	}
 }
@@ -86,7 +93,8 @@ func NewEventServiceHandler(svc EventServiceHandler, opts ...connect.HandlerOpti
 	eventServicePushEventHandler := connect.NewUnaryHandler(
 		EventServicePushEventProcedure,
 		svc.PushEvent,
-		opts...,
+		connect.WithSchema(eventServicePushEventMethodDescriptor),
+		connect.WithHandlerOptions(opts...),
 	)
 	return "/connect.event.v1.EventService/", http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		switch r.URL.Path {
