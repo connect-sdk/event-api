@@ -8,7 +8,7 @@ require (
 	github.com/connect-sdk/interceptor v0.0.0-20231217080652-41d5c47d4315
 	github.com/connect-sdk/middleware v0.0.0-20231217080731-937032a14b65
 	github.com/connect-sdk/pubsub-api v0.0.0-20231212032310-1aa3e0a8d021
-	github.com/envoyproxy/protoc-gen-validate v1.0.3
+	github.com/envoyproxy/protoc-gen-validate v1.0.4
 	github.com/go-chi/chi/v5 v5.0.11
 	github.com/google/uuid v1.5.0
 	github.com/ralch/slogr v0.0.0-20231103131639-6be682bdd645
