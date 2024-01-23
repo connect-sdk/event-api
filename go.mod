@@ -10,7 +10,7 @@ require (
 	github.com/connect-sdk/pubsub-api v0.0.0-20231212032310-1aa3e0a8d021
 	github.com/envoyproxy/protoc-gen-validate v1.0.4
 	github.com/go-chi/chi/v5 v5.0.11
-	github.com/google/uuid v1.5.0
+	github.com/google/uuid v1.6.0
 	github.com/ralch/slogr v0.0.0-20231103131639-6be682bdd645
 	google.golang.org/api v0.157.0
 	google.golang.org/genproto/googleapis/api v0.0.0-20240102182953-50ed04b92917
