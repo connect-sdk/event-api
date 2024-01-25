@@ -3,7 +3,7 @@ module github.com/connect-sdk/event-api
 go 1.21.1
 
 require (
-	cloud.google.com/go/pubsub v1.34.0
+	cloud.google.com/go/pubsub v1.35.0
 	connectrpc.com/connect v1.14.0
 	github.com/connect-sdk/interceptor v0.0.0-20231217080652-41d5c47d4315
 	github.com/connect-sdk/middleware v0.0.0-20231217080731-937032a14b65
@@ -13,14 +13,14 @@ require (
 	github.com/google/uuid v1.6.0
 	github.com/ralch/slogr v0.0.0-20231103131639-6be682bdd645
 	google.golang.org/api v0.157.0
-	google.golang.org/genproto/googleapis/api v0.0.0-20240102182953-50ed04b92917
+	google.golang.org/genproto/googleapis/api v0.0.0-20240122161410-6c6643bf1457
 	google.golang.org/grpc v1.61.0
 	google.golang.org/protobuf v1.32.0
 )
 
 require (
 	buf.build/gen/go/bufbuild/protovalidate/protocolbuffers/go v1.31.0-20231115204500-e097f827e652.2 // indirect
-	cloud.google.com/go v0.111.0 // indirect
+	cloud.google.com/go v0.112.0 // indirect
 	cloud.google.com/go/compute v1.23.3 // indirect
 	cloud.google.com/go/compute/metadata v0.2.3 // indirect
 	cloud.google.com/go/iam v1.1.5 // indirect
@@ -58,6 +58,6 @@ require (
 	golang.org/x/text v0.14.0 // indirect
 	golang.org/x/time v0.5.0 // indirect
 	google.golang.org/appengine v1.6.8 // indirect
-	google.golang.org/genproto v0.0.0-20240102182953-50ed04b92917 // indirect
+	google.golang.org/genproto v0.0.0-20240116215550-a9fa1716bcac // indirect
 	google.golang.org/genproto/googleapis/rpc v0.0.0-20240116215550-a9fa1716bcac // indirect
 )
