@@ -9,7 +9,7 @@ require (
 	github.com/connect-sdk/middleware v0.0.0-20240119124149-df8b12214cc0
 	github.com/connect-sdk/pubsub-api v0.0.0-20240118000236-2ed67bf9d746
 	github.com/envoyproxy/protoc-gen-validate v1.0.4
-	github.com/go-chi/chi/v5 v5.0.11
+	github.com/go-chi/chi/v5 v5.0.12
 	github.com/google/uuid v1.6.0
 	github.com/ralch/slogr v0.0.0-20231103131639-6be682bdd645
 	google.golang.org/api v0.165.0
