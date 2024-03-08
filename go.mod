@@ -3,7 +3,7 @@ module github.com/connect-sdk/event-api
 go 1.21.1
 
 require (
-	cloud.google.com/go/pubsub v1.36.2
+	cloud.google.com/go/pubsub v1.37.0
 	connectrpc.com/connect v1.15.0
 	github.com/connect-sdk/interceptor v0.0.0-20240302064224-1ec2a86c4f08
 	github.com/connect-sdk/middleware v0.0.0-20240302064308-b2a36e0681ed
@@ -13,7 +13,7 @@ require (
 	github.com/google/uuid v1.6.0
 	github.com/ralch/slogr v0.0.0-20231103131639-6be682bdd645
 	google.golang.org/api v0.169.0
-	google.golang.org/genproto/googleapis/api v0.0.0-20240228224816-df926f6c8641
+	google.golang.org/genproto/googleapis/api v0.0.0-20240304161311-37d4d3c04a78
 	google.golang.org/grpc v1.62.1
 	google.golang.org/protobuf v1.33.0
 )
