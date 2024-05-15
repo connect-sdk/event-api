@@ -14,7 +14,7 @@ require (
 	github.com/ralch/slogr v0.0.0-20231103131639-6be682bdd645
 	google.golang.org/api v0.180.0
 	google.golang.org/genproto/googleapis/api v0.0.0-20240429193739-8cf5692501f6
-	google.golang.org/grpc v1.63.2
+	google.golang.org/grpc v1.64.0
 	google.golang.org/protobuf v1.34.1
 )
 
