@@ -3,7 +3,7 @@ module github.com/connect-sdk/event-api
 go 1.21.1
 
 require (
-	cloud.google.com/go/pubsub v1.38.0
+	cloud.google.com/go/pubsub v1.39.0
 	connectrpc.com/connect v1.16.2
 	github.com/connect-sdk/interceptor v0.0.0-20240302064224-1ec2a86c4f08
 	github.com/connect-sdk/middleware v0.0.0-20240302064308-b2a36e0681ed
