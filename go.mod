@@ -3,7 +3,7 @@ module github.com/connect-sdk/event-api
 go 1.21.1
 
 require (
-	cloud.google.com/go/pubsub v1.43.0
+	cloud.google.com/go/pubsub v1.44.0
 	connectrpc.com/connect v1.17.0
 	github.com/connect-sdk/interceptor v0.0.0-20240302064224-1ec2a86c4f08
 	github.com/connect-sdk/middleware v0.0.0-20240302064308-b2a36e0681ed
@@ -24,7 +24,7 @@ require (
 	cloud.google.com/go/auth v0.9.5 // indirect
 	cloud.google.com/go/auth/oauth2adapt v0.2.4 // indirect
 	cloud.google.com/go/compute/metadata v0.5.2 // indirect
-	cloud.google.com/go/iam v1.2.0 // indirect
+	cloud.google.com/go/iam v1.2.1 // indirect
 	cloud.google.com/go/logging v1.11.0 // indirect
 	cloud.google.com/go/longrunning v0.6.0 // indirect
 	connectrpc.com/otelconnect v0.7.0 // indirect
