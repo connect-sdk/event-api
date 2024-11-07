@@ -1,6 +1,7 @@
 module github.com/connect-sdk/event-api
 
 go 1.21.1
+toolchain go1.22.9
 
 require (
 	cloud.google.com/go/pubsub v1.45.1
@@ -14,7 +15,7 @@ require (
 	github.com/ralch/slogr v0.0.0-20231103131639-6be682bdd645
 	google.golang.org/api v0.204.0
 	google.golang.org/genproto/googleapis/api v0.0.0-20241015192408-796eee8c2d53
-	google.golang.org/grpc v1.67.1
+	google.golang.org/grpc v1.68.0
 	google.golang.org/protobuf v1.35.1
 )
 
