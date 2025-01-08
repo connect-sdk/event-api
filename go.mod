@@ -5,7 +5,7 @@ toolchain go1.22.9
 
 require (
 	cloud.google.com/go/pubsub v1.45.3
-	connectrpc.com/connect v1.18.0
+	connectrpc.com/connect v1.18.1
 	github.com/connect-sdk/interceptor v0.0.0-20240302064224-1ec2a86c4f08
 	github.com/connect-sdk/middleware v0.0.0-20240302064308-b2a36e0681ed
 	github.com/connect-sdk/pubsub-api v0.0.0-20240219232254-21d6a9367c0e
