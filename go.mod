@@ -4,7 +4,7 @@ go 1.21.1
 toolchain go1.22.9
 
 require (
-	cloud.google.com/go/pubsub v1.46.0
+	cloud.google.com/go/pubsub v1.47.0
 	connectrpc.com/connect v1.18.1
 	github.com/connect-sdk/interceptor v0.0.0-20240302064224-1ec2a86c4f08
 	github.com/connect-sdk/middleware v0.0.0-20240302064308-b2a36e0681ed
@@ -21,7 +21,7 @@ require (
 
 require (
 	buf.build/gen/go/bufbuild/protovalidate/protocolbuffers/go v1.32.0-20240221180331-f05a6f4403ce.1 // indirect
-	cloud.google.com/go v0.118.0 // indirect
+	cloud.google.com/go v0.118.1 // indirect
 	cloud.google.com/go/auth v0.14.0 // indirect
 	cloud.google.com/go/auth/oauth2adapt v0.2.7 // indirect
 	cloud.google.com/go/compute/metadata v0.6.0 // indirect
