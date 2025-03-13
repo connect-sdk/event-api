@@ -13,7 +13,7 @@ require (
 	github.com/go-chi/chi/v5 v5.2.1
 	github.com/google/uuid v1.6.0
 	github.com/ralch/slogr v0.0.0-20231103131639-6be682bdd645
-	google.golang.org/api v0.225.0
+	google.golang.org/api v0.226.0
 	google.golang.org/genproto/googleapis/api v0.0.0-20250124145028-65684f501c47
 	google.golang.org/grpc v1.71.0
 	google.golang.org/protobuf v1.36.5
