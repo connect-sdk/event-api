@@ -13,7 +13,7 @@ require (
 	github.com/go-chi/chi/v5 v5.2.1
 	github.com/google/uuid v1.6.0
 	github.com/ralch/slogr v0.0.0-20231103131639-6be682bdd645
-	google.golang.org/api v0.227.0
+	google.golang.org/api v0.228.0
 	google.golang.org/genproto/googleapis/api v0.0.0-20250313205543-e70fdf4c4cb4
 	google.golang.org/grpc v1.71.0
 	google.golang.org/protobuf v1.36.6
@@ -23,7 +23,7 @@ require (
 	buf.build/gen/go/bufbuild/protovalidate/protocolbuffers/go v1.32.0-20240221180331-f05a6f4403ce.1 // indirect
 	cloud.google.com/go v0.120.0 // indirect
 	cloud.google.com/go/auth v0.15.0 // indirect
-	cloud.google.com/go/auth/oauth2adapt v0.2.7 // indirect
+	cloud.google.com/go/auth/oauth2adapt v0.2.8 // indirect
 	cloud.google.com/go/compute/metadata v0.6.0 // indirect
 	cloud.google.com/go/iam v1.4.2 // indirect
 	cloud.google.com/go/logging v1.13.0 // indirect
